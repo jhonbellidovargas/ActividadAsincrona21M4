@@ -1,0 +1,25 @@
+<section class="max-container p-4">
+  <h2 class="text-center mt-5">Iniciar Sesión</h2>
+  <section class="container-sm login__container">
+    <section class="col-3 login">
+      <section class="alert alert-danger my-2" *ngIf="errorMessage!=''">
+        {{errorMessage}}
+      </section>
+      <section class="form-group my-2">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="username" [style]="userNameErrorMessage!=''?'border-color: red':''" />
+        <p class="text-danger" *ngIf="userNameErrorMessage!=''">
+          {{userNameErrorMessage}}
+        </p>
+      </section>
+      <section class="form-group my-2">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="password" [style]="passwordErrorMessage!=''?'border-color: red':''" />
+        <p class="text-danger" *ngIf="passwordErrorMessage!=''">
+          {{passwordErrorMessage}}
+        </p>
+      </section>
+      <input class="btn btn-primary my-4" (click)="login()" value="Log in" />
+    </section>
+  </section>
+</section>

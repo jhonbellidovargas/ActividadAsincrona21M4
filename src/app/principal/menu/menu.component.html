@@ -1,0 +1,41 @@
+<header class="masthead">
+  <section class="container h-100">
+    <section class="row h-100 align-items-center py-4">
+      <section class="col-12 text-center">
+        <h1 class="fw-light">Hola admin!</h1>
+        <p class="lead">Has iniciado sesión correctamente.</p>
+      </section>
+      <section class="col-12 text-center">
+        <table class="table table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Total</th>
+              <th scope="col">Entregado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pedido of dataPedidos">
+              <th scope="row">{{ pedido.id }}</th>
+              <td>{{ pedido.nombre }}</td>
+              <td>{{ pedido.fecha }}</td>
+              <td>{{ pedido.total }}</td>
+              <td>
+                <span
+                  class="badge"
+                  [ngClass]="{
+                    'bg-success': pedido.entregado,
+                    'bg-danger': !pedido.entregado
+                  }"
+                  >{{ pedido.entregado ? "Entregado" : "No entregado" }}</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </section>
+</header>

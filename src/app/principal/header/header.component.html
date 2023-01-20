@@ -1,0 +1,29 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top navegador"
+>
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">Mi Tienda</a>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/menu">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/vista">Ventas</a>
+        </li> -->
+        <li class="nav-item">
+          <a
+            class="nav-link btn btn-outline-danger"
+            routerLink="/login"
+            *ngIf="isLogged"
+            (click)="logout()"
+            >Logout
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" *ngIf="!isLogged">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
